@@ -15,6 +15,13 @@ class UserDatabase{
         ~UserDatabase(); 
         void connectDb();
         void registerUser(const User& user);
-        void loginUser(const string& uName , const string& pass);
+        bool loginUser(const string& uName , const string& pass);
+        void sendMessage(const string& sender, const string& receiver, const string& message);
+        vector<string> fetchMessages(const string& username);
+        void storeMessage(const string& recipient, const string& sender, const string& message);
+        vector<string> getOfflineMessages(const string& recipient);
+        void deleteMessages(const string& recipient);
 };
+
+
 
